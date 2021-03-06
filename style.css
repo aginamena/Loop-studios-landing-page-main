@@ -1,0 +1,355 @@
+*{
+  /* setting the default margin and padding to 0 and making te box-sizing
+  to border-box because we want to have a fixed width */
+  margin: 0;
+  padding : 0;
+  box-sizing: border-box;
+}
+
+/* styling the heading */
+#heading{
+  background-image: url("images/desktop/image-hero.jpg");
+  font-family: 'Josefin Sans', sans-serif;
+  height: 550px;
+  padding-top:40px;
+
+}
+#heading-text{
+  color:white;
+  display: block;
+  margin-top:90px;
+}
+#head{
+  max-width: 562.5px;
+  font-size: 60px;
+  text-transform: uppercase;
+  /* border: 1px solid wheat; */
+  border: 1px solid white;
+  padding: 30px;
+  /* we want to reduce the space between element */
+  line-height: 60px;
+
+}
+
+#careers-link, #events-link, #products-link, #support-link, #about-link{
+  color:white;
+  font-weight: bold;
+}
+.navigation-link:hover{
+  border:1px solid white;
+  border-left:0;
+  border-right:0;
+  border-top:0;
+}
+
+
+/* interactive VR styling */
+#body-one{
+  padding-top: 120px;
+  /* the interactive VR is positioned relative to this element. This element is the parent */
+  position: relative;
+}
+.interactive-vr{
+  max-width: 731px;
+}
+#leader-vr{
+  background: white;
+  /* relative to its parent "body-one" and it'll have a higher stacking order
+  than the image because this element is positioned and the image isn't
+  positioned */
+  position: absolute;
+  bottom: 0;
+  right:0;
+  height: 332.5px;
+  width: 602.5px;
+  padding: 60px;
+}
+#leader-vr-heading{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 50px;
+  margin-bottom: 20px;
+  /* font-size: calc(20px + (52 - 20) * (100vw - 320px) / (1440 - 320)); */
+}
+#leader-vr-text{
+  font-family: 'Alata', sans-serif;
+  /* font-size: calc(9px + (16 - 9) * (100vw - 320px) / (1440 - 320)); */
+}
+
+/* styling body tow */
+#body-two{
+  padding-top:120px;
+  padding-bottom: 120px;
+}
+#gallary{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
+  flex-wrap: wrap;
+}
+#gallary-creations{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+#button{
+  height:40px;
+  text-transform: uppercase;
+  border:1px solid hsl(0, 0%, 55%);
+  background: white;
+  color:black;
+  width:150px;
+}
+
+#button:hover{
+  background: black;
+  color:white;
+}
+#our-creations{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: calc(30px + (52 - 30) * (100vw - 320px) / (1440 - 320));
+  text-transform: uppercase;
+}
+.gallary-image{
+  position: relative;
+  cursor: pointer;
+}
+.gallary-image:hover{
+  background: white;
+  color:black;
+}
+.description-img{
+  font-family: 'Josefin Sans', sans-serif;
+  color:white;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  font-size: calc(10px + (30 - 10) * (100vw - 320px) / (1440 - 320));
+  line-height: 30px;
+}
+.deep-earth, .night-arcade, .the-grid, .the-curiosity{
+  width:100px;
+}
+.soccer-team{
+  width:150px;
+}
+.img-opacity{
+  opacity:0.4;
+}
+.dark-theme{
+  /* by giving some elements black background and changing thier opacity,
+  the element will appear darker */
+  background: black;
+}
+
+.full-image{
+  /* taking the whole parent's width */
+  width:100%;
+}
+
+/* styling footer */
+footer{
+  font-family: 'Alata', sans-serif;
+  padding-top:50px;
+  padding-bottom: 50px;
+  background: black;
+  color:white;
+}
+#top-footer{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#icons{
+  display: flex;
+  justify-content: space-between;
+  width:200px;
+}
+#links{
+  display: flex;
+  justify-content: space-between;
+  width:350px;
+}
+#bottom-footer{
+  display: flex;
+  justify-content: space-between;
+}
+.icon:hover, .link:hover{
+  border:1px solid white;
+  border-left:0;
+  border-right:0;
+  border-top:0;
+  cursor: pointer;
+}
+
+
+
+/* media querries  */
+
+/* media querry for gallary */
+@media(max-width:812px){
+  #gallary{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media(max-width:680px){
+  #gallary{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+@media(max-width:490px){
+  #gallary{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+}
+
+/* mediq querry for gallery creations */
+@media(max-width:485px){
+  #body-two{
+    text-align: center;
+    position: relative;
+    padding-bottom: 200px;
+  }
+  #gallary-creations{
+    display: block;
+  }
+  #our-creations{
+    width:100%;
+  }
+  #button{
+    position:absolute;
+    bottom: 70px;
+    display: block;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  #gallary-creations{
+    position: static;
+  }
+}
+
+/* media querry for the head text */
+@media(max-width:460px){
+  #head{
+    font-size: calc(35px + (60 - 40) * (100vw - 320px) / (1440 - 320));
+  }
+}
+@media(max-width:281px){
+  #head{
+    padding:15px;
+  }
+}
+
+/* media querry for interactive-vr */
+@media(max-width:1213px){
+  .interactive-vr{
+    width:60%;
+  }
+  #leader-vr{
+    width:55%;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    /* we want the browser to automatically calculate the heigth
+    in case of smaller screens so there will be no overfow */
+    height: auto;
+
+  }
+  #leader-vr-text{
+    font-size: 19px;
+  }
+  #leader-vr-heading{
+   /* font-size: calc(20px + (52 - 20) * (100vw - 320px) / (1440 - 320)); */
+   font-size: 33px;
+   line-height: 50px;
+   font-weight: bold;
+  }
+
+}
+@media(max-width: 782px) {
+  #leader-vr{
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-top:50px;
+    /* we want the browser to automatically calculate the heigth
+    in case of smaller screens so there will be no overfow */
+  }
+  .interactive-vr{
+    width:100%;
+  }
+  #leader-vr-heading{
+    font-size: 40px;
+    width:100%;
+
+  }
+  #body-two{
+    padding-top:40px;
+  }
+
+}
+@media (max-width: 476px){
+  #leader-vr-heading{
+    font-size: calc(20px + (40 - 20) * (100vw - 320px) / (1440 - 320));
+    line-height: 30px;
+  }
+}
+
+  /* media querries for footer */
+
+  /* when the screen size is between medium screen's and small screens for mobile */
+@media(max-width:771px) and (min-width: 500px){
+  #rights-rev{
+    position: absolute;
+    bottom:0;
+  }
+  #footer{
+    position: relative;
+    height:150px;
+  }
+  #bottom-footer{
+    justify-content: space-around;
+  }
+}
+  /* for extra small devices  */
+  @media (max-width:500px){
+    #footer{
+      position: relative;
+      height:150px;
+      text-align: center;
+      height:300px;
+    }
+    #top-footer{
+      display: block;
+    }
+    #links{
+      display: block;
+    }
+    #rights-rev{
+      position: absolute;
+      bottom:0;
+      width:100%;
+    }
+    #icons{
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+      justify-content: space-around;
+    }
+    #links{
+      /* we want the width of the list to take the whole width of the parent */
+      width:100%;
+    }
+    .careers-link, .products-link{
+      margin-top:5px;
+      margin-bottom: 5px;
+    }
+  }
